@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../js/components/genericStyles/commonStyles.scss"
+    ],
+    "names": [],
+    "file": "commonStyles.css"
+}
