@@ -12,6 +12,9 @@ export default function ModalTasks(){
     $titleLabel.textContent = "Title";
     $taskLabel.textContent = "Task";
 
+    $input.type = "text";
+    $textArea.rows = 4;
+
     $input.id = "title-input";
     $textArea.id = "task-input";
    

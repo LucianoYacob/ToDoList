@@ -1,13 +1,15 @@
 import Header from "./Header.js";
-import ModalBody from "./ModalBody.js";
+import Body from "./ModalBody.js";
+import Footer from "./ModalFooter.js";
 
 const Modal = () => {
     const $modal = document.createElement("div");
 
     $modal.classList.add("modal");
 
-    $modal.appendChild(Header());
-    $modal.appendChild(ModalBody());
+    $modal.appendChild(Header(true));
+    $modal.appendChild(Body());
+    $modal.appendChild(Footer());
 
     return $modal;
 }

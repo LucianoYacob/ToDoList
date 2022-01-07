@@ -1,8 +1,10 @@
-const Header = () => {
+const Header = (isModal = false) => {
     const $header = document.createElement("div"),
         $flexContainer = document.createElement("div");
 
-    const titles = ["State", "Tasks", "Start Date", "Deadline", "Completed Date"];
+    const titles = isModal
+        ? ["State", "Tasks", "Start Date", "Deadline"] 
+        : ["State", "Tasks", "Start Date", "Deadline", "Completed Date"]
         
     $header.classList.add("header");
     $flexContainer.classList.add("flex-row");

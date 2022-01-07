@@ -9,7 +9,7 @@ const ToDoMainContainer = () => {
 
     $container.appendChild(Header());
     $container.appendChild(List());
-    $container.appendChild(Footer());
+    $container.appendChild(Footer(false));
 
     return $container;
 }

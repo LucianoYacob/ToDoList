@@ -2,4 +2,121 @@
 
 .modal{
     position: absolute;
+    width: 70%;
+    max-width: 70%;
+    min-width: min-content;
+    padding: 10px 5px;
+    background-color: #2a294a05;
+    box-shadow: 0 0 5px 2px black;
+    border: 1px solid white;
+
+    .header{
+        display: block;
+        width: 100%;
+        height: min-content;
+        .flex-row{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: $border;
+            width: 100%;
+            height: 55px;
+
+            div{
+                display: flex;
+                align-items: center;
+                width: 20%;
+                height: inherit;
+                padding: 8px 4px;
+                border-right: $border;
+
+                h3{
+                    margin: 0;
+                    font-weight: lighter;
+                }
+            }
+            div:first-child{
+                width: 15%;
+            }
+            div:nth-child(2){
+                flex-grow: 1;
+            }
+            div:last-child{
+                border: none;
+                flex-grow: .3;
+            }
+        }
+    }
+
+    .task-form{
+        display: flex;
+        justify-content: space-between;    
+        border-bottom: $border;
+        width: 100%;
+
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            border-right: $border;
+            padding: 8px 4px;
+            overflow-x: hidden;
+
+            input,textarea{
+                width: 100%;
+                max-width: 100%;
+                resize: none;
+                outline: none;
+                border: none;
+                border-radius: 3px;
+            }
+        }
+        div:first-child{
+            width: 15%;
+            i{
+                font-size: calc(1rem + 4vw);
+            }
+        }
+        div:nth-child(2){
+            flex-grow: 1;
+        }
+        div:nth-child(3) span{
+            font-size: calc(.5rem + 2vw);
+            font-weight: bolder;
+        }
+        div:last-child{
+            border: none;
+            flex-grow: .3;
+        }
+
+        .inputs-container{
+            display: block;
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                border: none;
+            }
+        }
+    }
+
+    .footer{
+        .btn-container{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-top: 10px ;
+            padding-right: 10px;
+
+            button{
+                @include btn-style;
+                margin-right: calc(1px + 1vw);
+            }
+            button:last-child{
+                margin-right: 0;
+            }
+        }
+    }
 }

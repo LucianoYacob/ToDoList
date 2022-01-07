@@ -1,4 +1,145 @@
 .modal {
   position: absolute;
+  width: 70%;
+  max-width: 70%;
+  min-width: min-content;
+  padding: 10px 5px;
+  background-color: #2a294a05;
+  box-shadow: 0 0 5px 2px black;
+  border: 1px solid white;
+}
+
+.modal .header {
+  display: block;
+  width: 100%;
+  height: min-content;
+}
+
+.modal .header .flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0005;
+  width: 100%;
+  height: 55px;
+}
+
+.modal .header .flex-row div {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: inherit;
+  padding: 8px 4px;
+  border-right: 1px solid #0005;
+}
+
+.modal .header .flex-row div h3 {
+  margin: 0;
+  font-weight: lighter;
+}
+
+.modal .header .flex-row div:first-child {
+  width: 15%;
+}
+
+.modal .header .flex-row div:nth-child(2) {
+  flex-grow: 1;
+}
+
+.modal .header .flex-row div:last-child {
+  border: none;
+  flex-grow: .3;
+}
+
+.modal .task-form {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #0005;
+  width: 100%;
+}
+
+.modal .task-form div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-right: 1px solid #0005;
+  padding: 8px 4px;
+  overflow-x: hidden;
+}
+
+.modal .task-form div input, .modal .task-form div textarea {
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.modal .task-form div:first-child {
+  width: 15%;
+}
+
+.modal .task-form div:first-child i {
+  font-size: calc(1rem + 4vw);
+}
+
+.modal .task-form div:nth-child(2) {
+  flex-grow: 1;
+}
+
+.modal .task-form div:nth-child(3) span {
+  font-size: calc(.5rem + 2vw);
+  font-weight: bolder;
+}
+
+.modal .task-form div:last-child {
+  border: none;
+  flex-grow: .3;
+}
+
+.modal .task-form .inputs-container {
+  display: block;
+}
+
+.modal .task-form .inputs-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border: none;
+}
+
+.modal .footer .btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.modal .footer .btn-container button {
+  border: none;
+  padding: .5rem .8rem;
+  box-shadow: 0 0 3px #0005;
+  border-radius: 4px;
+  background: #653585;
+  color: #c6b6fa;
+  font-weight: 600;
+  margin-right: calc(1px + 1vw);
+}
+
+.modal .footer .btn-container button:hover {
+  background-color: #2a294a;
+  box-shadow: 0 0 5px #000a;
+}
+
+.modal .footer .btn-container button:focus {
+  outline: none;
+}
+
+.modal .footer .btn-container button:last-child {
+  margin-right: 0;
 }
 /*# sourceMappingURL=modalStyles.css.map */
