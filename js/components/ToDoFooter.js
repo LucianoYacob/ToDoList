@@ -24,14 +24,12 @@ const ToDoFooter = () => {
     $txtPTask.textContent = `In Progress Tasks: `;
     $txtPTask.appendChild($bPTasks);
 
-    $textContainer.appendChild($txtCTask);
-    $textContainer.appendChild($txtPTask);
+    $textContainer.append($txtCTask, $txtPTask);
     $flexFooter.appendChild($textContainer);
 
-    $btnContainer.appendChild(Btn("Add Task", "add-task", "btn"));
-    $btnContainer.appendChild(Btn("Delete Task", "delete-task", "btn"));
+    $btnContainer.append(Btn("Add Task", "add-task", "btn"), Btn("Delete Task", "delete-task", "btn"));
+    
     $flexFooter.appendChild($btnContainer);
-
     $footer.appendChild($flexFooter);
             
     return $footer;

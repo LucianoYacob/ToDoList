@@ -1,12 +1,24 @@
 * {
   box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
 html,
 body {
+  overflow-y: hidden;
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  background-color: #2a294a;
+}
+
+#root {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  min-height: inherit;
 }
 /*# sourceMappingURL=global.css.map */

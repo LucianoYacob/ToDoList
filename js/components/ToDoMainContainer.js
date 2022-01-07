@@ -1,6 +1,6 @@
 import Footer from "./ToDoFooter.js";
-import Header from "./ToDoHeader.js";
-
+import Header from "./Header.js";
+import List from "./ToDoListContainer.js";
 
 const ToDoMainContainer = () => {
     const $container = document.createElement("main");
@@ -8,6 +8,7 @@ const ToDoMainContainer = () => {
     $container.classList.add("main");
 
     $container.appendChild(Header());
+    $container.appendChild(List());
     $container.appendChild(Footer());
 
     return $container;

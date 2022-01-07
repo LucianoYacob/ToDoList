@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,UAAU,EAAE,UAAU;CACzB;;AAED,AAAA,IAAI;AACJ,IAAI,CAAA;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EAEV,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,KAAK;CACpB",
+    "mappings": "AAEA,AAAA,CAAC,CAAA;EACG,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,oBAAoB;CACpC;;AAED,AAAA,IAAI;AACJ,IAAI,CAAA;EACA,UAAU,EAAE,MAAO;EACnB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,KAAK;EACjB,gBAAgB,ECXP,OAAO;CDYnB;;AAED,AAAA,KAAK,CAAA;EACD,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,QAAQ;EAClB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,KAAK,EAAE,OAAO;EACd,UAAU,EAAE,OAAO;CACtB",
     "sources": [
-        "../js/components/genericStyles/global.scss"
+        "../js/components/genericStyles/global.scss",
+        "../js/components/genericStyles/commonStyles.scss"
     ],
     "names": [],
     "file": "global.css"

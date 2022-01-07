@@ -1,0 +1,26 @@
+$border: 1px solid #0005;
+
+$bg-colors: (
+    primary: #2a294a, 
+    secondary: #653585,
+    terciary: #c6b6fa
+);
+
+@mixin btn-style() {
+    border: none;
+    //poner rem o em
+    padding: .5rem .8rem;
+    box-shadow: 0 0 3px #0005;
+    border-radius: 4px;
+    background: map-get($bg-colors, secondary );
+    color: map-get($bg-colors, terciary );
+    font-weight: 600;
+
+    &:hover{
+        background-color: #2a294a;
+        box-shadow: 0 0 5px #000a;
+    }
+    &:focus{
+        outline: none;
+    }
+}

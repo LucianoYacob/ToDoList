@@ -1,0 +1,117 @@
+.main {
+  overflow-x: scroll;
+  width: 80%;
+  max-width: 80%;
+  min-width: min-content;
+  margin: 0 auto;
+}
+
+.main::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+.main .header {
+  border: 1px solid #0005;
+  margin: 0;
+  min-width: min-content;
+  max-width: 100%;
+}
+
+.main .header .flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #653585;
+  height: 60px;
+}
+
+.main .header .flex-row .title-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-left: 1px solid #0005;
+  padding: 0px 8px;
+}
+
+.main .header .flex-row .title-item h3 {
+  font-size: calc(.9rem + .5vw);
+  margin: 0;
+}
+
+.main .header .flex-row .title-item:first-child {
+  border-left: none;
+}
+
+.main .list-container .flex-list {
+  margin: 0;
+  padding: 0;
+}
+
+.main .footer {
+  display: inline-block;
+  width: 100%;
+}
+
+.main .footer .flex-footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 25px 15px;
+  background-color: #c6b6fa;
+}
+
+.main .footer .flex-footer div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main .footer .flex-footer div:first-child span:first-child {
+  margin-bottom: 7px;
+}
+
+.main .footer .flex-footer div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.main .footer .flex-footer div:last-child button {
+  border: none;
+  padding: .5rem .8rem;
+  box-shadow: 0 0 3px #0005;
+  border-radius: 4px;
+  background: #653585;
+  color: #c6b6fa;
+  font-weight: 600;
+}
+
+.main .footer .flex-footer div:last-child button:hover {
+  background-color: #2a294a;
+  box-shadow: 0 0 5px #000a;
+}
+
+.main .footer .flex-footer div:last-child button:focus {
+  outline: none;
+}
+
+.main .footer .flex-footer div:last-child button:first-child {
+  margin-bottom: 3px;
+}
+
+@media screen and (min-width: 600px) {
+  .main .footer .flex-footer {
+    width: 70%;
+  }
+  .main .footer .flex-footer div:last-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+  .main .footer .flex-footer div:last-child button:first-child {
+    margin-right: 7px;
+    margin-bottom: 0px;
+  }
+}
+/*# sourceMappingURL=toDoStyles.css.map */

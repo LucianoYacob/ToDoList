@@ -1,10 +1,10 @@
-const ToDoHeader = () => {
+const Header = () => {
     const $header = document.createElement("div"),
         $flexContainer = document.createElement("div");
 
     const titles = ["State", "Tasks", "Start Date", "Deadline", "Completed Date"];
         
-    $header.classList.add("main-header");
+    $header.classList.add("header");
     $flexContainer.classList.add("flex-row");
 
     titles.forEach((title) => {
@@ -12,7 +12,7 @@ const ToDoHeader = () => {
         const $titleContainer = document.createElement("div");
 
         $title.classList.add("title");
-        $titleContainer.classList.add("title-container");
+        $titleContainer.classList.add("title-item");
 
         $title.textContent = title;
         $titleContainer.appendChild($title);
@@ -26,4 +26,4 @@ const ToDoHeader = () => {
     return $header;
 }
 
-export default ToDoHeader;
+export default Header;

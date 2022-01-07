@@ -1,9 +1,13 @@
-const ToDoMainContainer = () => {
-    const $container = document.createElement("main");
+const ToDoListContainer = () => {
+    const $listContainer = document.createElement("div"),
+        $listUl = document.createElement("ul");
 
-    $container.classList.add("main");
+    $listContainer.classList.add("list-container");
+    $listUl.classList.add("flex-list");
 
-    return $container;
+    $listContainer.appendChild($listUl);
+
+    return $listContainer;
 }
 
-export default ToDoMainContainer;
+export default ToDoListContainer;

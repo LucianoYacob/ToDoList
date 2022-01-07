@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAA;EACF,QAAQ,EAAE,QAAQ;CACrB",
+    "sources": [
+        "../js/components/modalStyles.scss",
+        "../js/components/genericStyles/commonStyles.scss"
+    ],
+    "names": [],
+    "file": "modalStyles.css"
+}

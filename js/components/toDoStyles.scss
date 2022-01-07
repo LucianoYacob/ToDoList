@@ -1,0 +1,106 @@
+@import "./genericStyles/commonStyles.scss";
+
+.main{
+    overflow-x: scroll;
+    width: 80%;
+    max-width: 80%;
+    min-width: min-content;
+    margin: 0 auto;
+
+    &::-webkit-scrollbar{
+        visibility: hidden;
+    }
+    
+    // Styles for header of main view
+    .header{
+        border: $border;   
+        margin: 0;
+        min-width: min-content;
+        max-width: 100%;
+        .flex-row{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: map-get($bg-colors, secondary);
+            height: 60px;
+            
+            .title-item{
+                display: flex;
+                align-items: center;
+                height: 100%;
+                border-left: $border;
+                padding: 0px 8px;
+
+                h3{
+                    font-size: calc(.9rem + .5vw);
+                    margin: 0;
+                }
+            }
+            .title-item:first-child{
+                border-left: none;
+            }
+        }
+    }
+
+    // Styles for list of main view
+    .list-container{
+        .flex-list{
+            margin: 0;
+            padding: 0;
+        }
+    }    
+
+
+    // Styles for footer of main view
+    .footer{
+        display: inline-block;
+        width: 100%;
+        .flex-footer{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 25px 15px;
+            background-color: map-get($bg-colors, terciary );
+
+            div:first-child{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                span:first-child{
+                    margin-bottom: 7px;
+                }
+            }
+
+            div:last-child{
+                display: flex;
+                flex-direction: column;
+
+                button{
+                    @include btn-style();
+                }
+
+                button:first-child{
+                    margin-bottom: 3px;
+                }
+            }
+
+            @media screen and (min-width: 600px){
+                width: 70%;
+
+                div:last-child{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-end;
+                    flex-grow: 1;
+
+                    button:first-child{
+                        margin-right: 7px;
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
