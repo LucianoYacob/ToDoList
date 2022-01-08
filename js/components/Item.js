@@ -3,7 +3,7 @@ import Container from "./GenericContainer.js";
 
 const d = document;
 
-export default function Item() {
+export default function Item(id, state,title, sDate, lDate, cDate) {
     const $li = d.createElement("li"),
         $title = d.createElement("span"),
         $startD = d.createElement("span"),
@@ -18,12 +18,18 @@ export default function Item() {
     $fisnishedD.classList.add("finishedD");
     $btnUpdate.classList.add("btn-open-task");
 
-    const $cont0 = Container(State("far", "fa-clipboard"));
+    $title.textContent = title || "";
+    $startD.textContent = sDate || "";
+    $limitD.textContent = lDate || "";
+    $fisnishedD.value = cDate || undefined;
+
+    const $cont0 = Container(State(state || "far", "fa-clipboard"));
     const $cont1 = Container($title);
     const $cont2 = Container($startD);
     const $cont3 = Container($limitD);
     const $cont4 = Container($fisnishedD);
 
+    id && ($li.id = id);
     $title.id = "sp-title";
     $startD.id = "sp-started";
     $limitD.id = "sp-limit";
