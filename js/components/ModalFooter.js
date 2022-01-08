@@ -7,9 +7,9 @@ const ModalFooter = () => {
     $container.classList.add("footer");
     $btnContainer.classList.add("btn-container");
 
-    $btnContainer.appendChild(Button("Update Task", "btn-modal-update", "btn-footer"));
-    $btnContainer.appendChild(Button("Save Task", "btn-modal-save", "btn-footer"));
-    $btnContainer.appendChild(Button("Cancel", "btn-modal-cancel", "btn-footer"));
+    $btnContainer.appendChild(Button("Update Task", "btn-update-task", "btn-footer"));
+    $btnContainer.appendChild(Button("Save Task", "btn-save-task", "btn-footer"));
+    $btnContainer.appendChild(Button("Cancel", "close-modal", "btn-footer"));
 
     $container.appendChild($btnContainer);
 

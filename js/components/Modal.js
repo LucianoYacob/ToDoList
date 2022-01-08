@@ -6,6 +6,7 @@ const Modal = () => {
     const $modal = document.createElement("div");
 
     $modal.classList.add("modal");
+    $modal.id = "modal";
 
     $modal.appendChild(Header(true));
     $modal.appendChild(Body());

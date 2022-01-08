@@ -15,8 +15,8 @@ export default function ModalTasks(){
     $input.type = "text";
     $textArea.rows = 4;
 
-    $input.id = "title-input";
-    $textArea.id = "task-input";
+    $input.id = "input-title";
+    $textArea.id = "input-task";
    
     $input.classList.add("title-input");
     $textArea.classList.add("task-input");

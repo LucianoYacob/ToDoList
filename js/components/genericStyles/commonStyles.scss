@@ -3,7 +3,8 @@ $border: 1px solid #0005;
 $bg-colors: (
     primary: #2a294a, 
     secondary: #653585,
-    terciary: #c6b6fa
+    terciary: #c6b6fa,
+    item: #eee
 );
 
 @mixin btn-style() {

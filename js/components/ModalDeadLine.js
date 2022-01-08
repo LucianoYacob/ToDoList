@@ -4,6 +4,8 @@ export default function ModalDeadline(){
 
     $input.classList.add("deadline-input");
     $input.type = "date"
+    $input.id = "deadline-input";
+    $input.disabled = true;
 
 
     $container.appendChild($input);

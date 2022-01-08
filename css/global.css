@@ -3,6 +3,11 @@
   font-family: 'Oswald', sans-serif;
 }
 
+*::-webkit-scrollbar {
+  width: 0;
+  visibility: hidden;
+}
+
 html,
 body {
   overflow-y: hidden;

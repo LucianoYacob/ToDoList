@@ -27,7 +27,7 @@ const ToDoFooter = () => {
     $textContainer.append($txtCTask, $txtPTask);
     $flexFooter.appendChild($textContainer);
 
-    $btnContainer.append(Btn("Add Task", "add-task", "btn"), Btn("Delete Task", "delete-task", "btn"));
+    $btnContainer.append(Btn("Add Task", "btn-add", "btn"), Btn("Delete Task", "delete-task", "btn"));
     
     $flexFooter.appendChild($btnContainer);
     $footer.appendChild($flexFooter);

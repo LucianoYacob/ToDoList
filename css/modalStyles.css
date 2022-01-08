@@ -1,12 +1,20 @@
 .modal {
   position: absolute;
-  width: 70%;
-  max-width: 70%;
+  width: 100%;
   min-width: min-content;
   padding: 10px 5px;
   background-color: #2a294a05;
   box-shadow: 0 0 5px 2px black;
   border: 1px solid white;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s ease-out;
+}
+
+@media screen and (min-width: 600px) {
+  .modal {
+    width: 70%;
+  }
 }
 
 .modal .header {

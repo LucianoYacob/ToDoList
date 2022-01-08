@@ -1,4 +1,4 @@
-export default function ModalState(...iconClass){
+export default function State(...iconClass){
     const $container = document.createElement("div"),
         $icon = document.createElement("i");
 

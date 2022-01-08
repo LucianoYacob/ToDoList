@@ -2,16 +2,17 @@
 
 .main{
     overflow-x: scroll;
-    width: 80%;
-    max-width: 80%;
+    width: 100%;
+    max-width: 100%;
     min-width: min-content;
     margin: 0 auto;
 
-    filter: blur(5px);
+    transition: filter 0.4s ease-out;
 
-    &::-webkit-scrollbar{
-        visibility: hidden;
+    @media screen and (min-width: 600px) {
+        width: 80%;
     }
+
     
     // Styles for header of main view
     .header{
@@ -21,15 +22,20 @@
         max-width: 100%;
         .flex-row{
             display: flex;
-            justify-content: space-between;
             align-items: center;
             background-color: map-get($bg-colors, secondary);
             height: 60px;
+            width: 100%;
             
+            .title-item:first-child{
+                width: 10%;
+            }
+
             .title-item{
                 display: flex;
                 align-items: center;
                 height: 100%;
+                width: calc(90% / 4);
                 border-left: $border;
                 padding: 0px 8px;
 
@@ -46,9 +52,70 @@
 
     // Styles for list of main view
     .list-container{
+        max-width: 100%;
+        min-width: min-content;
+        margin: 0;
+        max-height: 300px;
+        overflow-y: scroll;
         .flex-list{
+            display: flex;
+            flex-direction: column;
             margin: 0;
             padding: 0;
+            .item{
+                display: flex;
+                width: calc(100% - 2px); 
+                margin: 0 auto;
+                background-color: map-get($bg-colors, item);
+
+                .container:first-child{
+                    width: 10%;
+                }
+
+                .container{
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: calc(90% / 4);
+                    border-left: $border;
+                    padding: 16px 4px;
+
+                    i{
+                        font-size: calc(1rem + 1vw);
+                    }
+
+                    button{
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                        border: none;
+                        color: map-get($bg-colors, item);
+                        background-color: map-get($bg-colors, secondary);
+
+                        &:hover{
+                            background-color: map-get($bg-colors, primary );
+                        }
+                    }
+
+                    input{
+                        width: 80%;
+                        max-width: 100%;
+                        &:active{
+                            outline: none;
+                        }
+                    }
+                }
+
+                .container:first-child{
+                    border-left: none;
+                }
+            }
         }
     }    
 

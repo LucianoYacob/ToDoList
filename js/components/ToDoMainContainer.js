@@ -6,6 +6,7 @@ const ToDoMainContainer = () => {
     const $container = document.createElement("main");
 
     $container.classList.add("main");
+    $container.id = "main";
 
     $container.appendChild(Header());
     $container.appendChild(List());

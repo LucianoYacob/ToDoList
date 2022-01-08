@@ -1,4 +1,4 @@
-import state from "./ModalState.js";
+import state from "./State.js";
 import TasksInputs from "./ModalTasks.js";
 import StartDate from "./ModalStartDate.js";
 import ModalDeadline from "./ModalDeadLine.js";
