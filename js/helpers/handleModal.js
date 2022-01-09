@@ -1,14 +1,13 @@
+import fillModal from "../helpers/fillModal.js";
+
 const d = document;
 
-export const handleModal = (target) => {
-    if(target.matches("#btn-open-task")){
-        d.getElementById("input-title").value = "";
-        d.getElementById("input-task").value = "";
-        d.getElementById("deadline-input").disabled = false;
-
-        ChangeVisibility(3, 1, false)
+export const handleModal = (open) => {
+    if(open){
+        ChangeVisibility(3, 1, false);
+        fillModal();
     }
-    else if(target.matches("#close-modal") || target.matches("#btn-save-task")){
+    else if(!open){
         ChangeVisibility(0, 0, true)
 
         // Remove class "active" of the clicked element
@@ -19,13 +18,9 @@ export const handleModal = (target) => {
             }
         }
     }
-    else if(e.target.matches(".update")){
-        ChangeVisibility(3, 1, false)
-    }
 }
 
-
-export function ChangeVisibility(blurAmount, opacity, shutDown){
+function ChangeVisibility(blurAmount, opacity, shutDown){
     const $modal = d.getElementById("modal"),
         $main = d.getElementById("main");
     
@@ -41,6 +36,8 @@ export function ChangeVisibility(blurAmount, opacity, shutDown){
             900
         );
     }
-    else
+    else{
+        d.getElementById("deadline-input").disabled = false;
         $modal.style.visibility = visibility;
+    }
 }

@@ -9,7 +9,7 @@ IDBRequest.addEventListener("upgradeneeded", () => {
     DB.createObjectStore("Tasks", { autoIncrement: true });
 });
 
-const GetIDBData = (readMode) => {
+export const GetIDBData = (readMode) => {
     const DB = IDBRequest.result;
     const IDBTransaction = DB.transaction("Tasks", readMode);
     const objectstore = IDBTransaction.objectStore("Tasks");
@@ -24,18 +24,21 @@ export const ReadObjectStore = () => {
     const cursor = IDBData[0].openCursor();
 
     const documentFragment = document.createDocumentFragment();
+
     $list.innerHTML = "";
+
     cursor.addEventListener("success", () => {
         let res = cursor.result;
 
         if(res){
-            let liElemen = Item(res.key, res.value.title, res.value.sDate, res.value.lDate, res.value.cDate);
-            documentFragment.appendChild(liElemen);
+            let liElemen = Item(res.key, res.value.state, res.value.title, res.value.sDate, res.value.lDate, res.value.cDate);
+                documentFragment.appendChild(liElemen);
             cursor.result.continue();
         }
         $list.appendChild(documentFragment);
     });
 }
+
 
 export const AddNoteDB = objectNote => {
     const IDBData = GetIDBData("readwrite");

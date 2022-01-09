@@ -3,7 +3,7 @@ import Container from "./GenericContainer.js";
 
 const d = document;
 
-export default function Item(id, state,title, sDate, lDate, cDate) {
+export default function Item(id, state, title, sDate, lDate, cDate) {
     const $li = d.createElement("li"),
         $title = d.createElement("span"),
         $startD = d.createElement("span"),

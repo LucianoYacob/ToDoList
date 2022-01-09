@@ -109,8 +109,22 @@
 }
 
 .main .list-container .flex-list .item .container input {
-  width: 80%;
+  position: relative;
+  width: 90%;
   max-width: 100%;
+  padding: 0;
+  border-radius: 4px;
+  border: none;
+}
+
+.main .list-container .flex-list .item .container input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 20%;
+  right: 0;
+}
+
+.main .list-container .flex-list .item .container input:focus {
+  outline: none;
 }
 
 .main .list-container .flex-list .item .container input:active {
