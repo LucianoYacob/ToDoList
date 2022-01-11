@@ -73,7 +73,20 @@
 }
 
 .main .list-container .flex-list .item .container:first-child {
+  cursor: pointer;
   width: 10%;
+}
+
+.main .list-container .flex-list .item .container:first-child div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .list-container .flex-list .item .container:first-child div i {
+  position: absolute;
+  pointer-events: none;
+  font-size: calc(1rem + 1vw);
 }
 
 .main .list-container .flex-list .item .container {
@@ -84,10 +97,6 @@
   width: calc(90% / 4);
   border-left: 1px solid #0005;
   padding: 16px 4px;
-}
-
-.main .list-container .flex-list .item .container i {
-  font-size: calc(1rem + 1vw);
 }
 
 .main .list-container .flex-list .item .container button {
@@ -133,6 +142,10 @@
 
 .main .list-container .flex-list .item .container:first-child {
   border-left: none;
+}
+
+.main .list-container .flex-list .selected {
+  background-color: #d5d0e6;
 }
 
 .main .footer {

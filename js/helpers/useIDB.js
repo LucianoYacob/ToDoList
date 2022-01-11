@@ -32,7 +32,7 @@ export const ReadObjectStore = () => {
 
         if(res){
             let liElemen = Item(res.key, res.value.state, res.value.title, res.value.sDate, res.value.lDate, res.value.cDate);
-                documentFragment.appendChild(liElemen);
+            documentFragment.appendChild(liElemen);
             cursor.result.continue();
         }
         $list.appendChild(documentFragment);
@@ -48,7 +48,7 @@ export const AddNoteDB = objectNote => {
     });
 }
 
-export const DeleteNote = key => {
+export const deleteData  = key => {
     const IDBData = GetIDBData("readwrite");
     IDBData[0].delete(key);
     IDBData[1].addEventListener("complete", () => {
@@ -56,10 +56,22 @@ export const DeleteNote = key => {
     });
 }
 
-export const UpdateNote = (key, updatedNote) => {
+// Poner a todos los metodos data en vez de task
+export const UpdateTask = async (key, newData) => {
     const IDBData = GetIDBData("readwrite");
-    IDBData[0].put(updatedNote, key);
-    IDBData[1].addEventListener("success", () => {
-        alert("Task updated");
-    });
+    const cursor = IDBData[0].openCursor();
+
+    cursor.onsuccess = await function(e){
+        let cursor = e.target.result;
+        if(cursor){
+            if(cursor.primaryKey === key){
+                const oldData = cursor.value;
+                
+                IDBData[0].put({...oldData, ...newData}, key);
+                IDBData[1].addEventListener("success", alert("Task updated"));
+            }
+
+            cursor.continue();
+        }
+    };
 }

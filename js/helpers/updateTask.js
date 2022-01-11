@@ -1,12 +1,13 @@
-import { AddNoteDB, ReadObjectStore } from "../helpers/useIDB.js"
+import { UpdateTask, ReadObjectStore } from "../helpers/useIDB.js"
 import { handleModal } from "../helpers/handleModal.js";
 
 const d = document;
 
-const addNote = () => {
+const updateTask = () => {
     const $title = d.getElementById("input-title"),
      $task = d.getElementById("input-task"),
-     $deadline = d.getElementById("deadline-input");
+     $deadline = d.getElementById("deadline-input"),
+     key = parseInt(d.getElementById("list").querySelector(".active").id);
 
     let state = ["fas", "fa-spinner"],
         title = $title.value.trim(),
@@ -18,19 +19,18 @@ const addNote = () => {
         return;
     }
 
-    const data = {
+    const newData = {
         state,
         title,
-        sDate: new Date().toLocaleDateString(),
         lDate,
         cDate: undefined,
         task,
     }
 
-    AddNoteDB(data);
+    UpdateTask(key, newData);
     ReadObjectStore();
     
     handleModal(false);
 }
 
-export default addNote;
+export default updateTask;

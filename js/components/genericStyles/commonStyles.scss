@@ -4,12 +4,12 @@ $bg-colors: (
     primary: #2a294a, 
     secondary: #653585,
     terciary: #c6b6fa,
+    selected: #d5d0e6,
     item: #eee
 );
 
-@mixin btn-style() {
+@mixin btn-actived() {
     border: none;
-    //poner rem o em
     padding: .5rem .8rem;
     box-shadow: 0 0 3px #0005;
     border-radius: 4px;
@@ -20,6 +20,18 @@ $bg-colors: (
     &:hover{
         background-color: #2a294a;
         box-shadow: 0 0 5px #000a;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+@mixin btn-disabled() {
+    background: grey;
+    color: black;
+    &:hover{
+        background-color: grey;
+        box-shadow: none;
     }
     &:focus{
         outline: none;

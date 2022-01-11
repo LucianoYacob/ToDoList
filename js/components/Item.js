@@ -23,7 +23,8 @@ export default function Item(id, state, title, sDate, lDate, cDate) {
     $limitD.textContent = lDate || "";
     $fisnishedD.value = cDate || undefined;
 
-    const $cont0 = Container(State(state || "far", "fa-clipboard"));
+    const $cont0 = Container(State(...state || ["far", "fa-clipboard"]));
+    $cont0.classList.add("icon-cont");
     const $cont1 = Container($title);
     const $cont2 = Container($startD);
     const $cont3 = Container($limitD);

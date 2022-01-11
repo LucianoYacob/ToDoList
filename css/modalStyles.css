@@ -150,4 +150,18 @@
 .modal .footer .btn-container button:last-child {
   margin-right: 0;
 }
+
+.modal .footer .btn-container .disabled {
+  background: grey;
+  color: black;
+}
+
+.modal .footer .btn-container .disabled:hover {
+  background-color: grey;
+  box-shadow: none;
+}
+
+.modal .footer .btn-container .disabled:focus {
+  outline: none;
+}
 /*# sourceMappingURL=modalStyles.css.map */
