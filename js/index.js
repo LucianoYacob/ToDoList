@@ -4,6 +4,7 @@ import appendItem  from "./helpers/appendItem.js";
 import addTask  from "./helpers/addTask.js";
 import updateTask from "./helpers/updateTask.js";
 import deleteTask, { selecItem } from "./helpers/deletTask.js";
+import finishTask from "./helpers/finishTask.js";
 
 const d = document;
 
@@ -40,3 +41,9 @@ d.addEventListener("click", e => {
         else if(target.matches("#close-modal")) handleModal(false);
     }
 });
+
+d.addEventListener("change", e => {
+    if(e.target.matches(".finishedD")){
+        finishTask(e.target);
+    }
+})

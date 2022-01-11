@@ -57,11 +57,11 @@ export const deleteData  = key => {
 }
 
 // Poner a todos los metodos data en vez de task
-export const UpdateTask = async (key, newData) => {
+export const UpdateTask = (key, newData) => {
     const IDBData = GetIDBData("readwrite");
     const cursor = IDBData[0].openCursor();
 
-    cursor.onsuccess = await function(e){
+    cursor.onsuccess = function(e){
         let cursor = e.target.result;
         if(cursor){
             if(cursor.primaryKey === key){

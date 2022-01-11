@@ -1,3 +1,4 @@
+import taskCount from "./taskCount.js";
 import { AddNoteDB, ReadObjectStore } from "../helpers/useIDB.js"
 import { handleModal } from "../helpers/handleModal.js";
 
@@ -17,7 +18,6 @@ const addNote = () => {
         alert("You need to write a title and a task");
         return;
     }
-
     const data = {
         state,
         title,
@@ -29,6 +29,7 @@ const addNote = () => {
 
     AddNoteDB(data);
     ReadObjectStore();
+    taskCount("progress");
     
     handleModal(false);
 }

@@ -22,6 +22,9 @@ export default function Item(id, state, title, sDate, lDate, cDate) {
     $startD.textContent = sDate || "";
     $limitD.textContent = lDate || "";
     $fisnishedD.value = cDate || undefined;
+    $fisnishedD.value !== "undefined" && ($fisnishedD.disabled = "true");
+    $fisnishedD.min = new Date().toISOString().split("T")[0];
+
 
     const $cont0 = Container(State(...state || ["far", "fa-clipboard"]));
     $cont0.classList.add("icon-cont");
