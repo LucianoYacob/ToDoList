@@ -1,4 +1,5 @@
 import { deleteData, GetIDBData } from "./useIDB.js";
+import taskCount from "./taskCount.js";
 
 const deleteTask = () => {
     const $list = document.getElementById("list"),
@@ -14,23 +15,34 @@ const deleteTask = () => {
             for(let $item of $allItems) {
                 let key = parseInt($item.id);
                
-                isNaN(key) || (
+                isNaN(key) 
+                ? $list.removeChild($item)
+                : (
                     deleteTasks(key),
-                    $list.removeChild($item)
+                    $list.removeChild($item),
+                    taskCount({deleteAll: true})
                 )
             }
+            alert("Tasks removed")  
         }
     }
     else{
         let deleteTs = confirm("are you sure to delete that task/s?");
 
-        if(deleteTs) $elmentsToDelete.forEach($item => {
-            let key = parseInt($item.id);
-            isNaN(key) || (
-                deleteTasks(key),
-                $list.removeChild($item)
-            )
-        });
+        if(deleteTs){ 
+            $elmentsToDelete.forEach($item => {
+                let key = parseInt($item.id);
+                isNaN(key) 
+                ? $list.removeChild($item) 
+                : (
+                    deleteTasks(key),
+                    $item.classList.contains("completed-task") && taskCount({dataToModify:"completed", deletTask:true}),
+                    $item.classList.contains("pend-task") && taskCount({dataToModify:"progress", deletTask:true}),
+                    $list.removeChild($item)
+                )
+            });
+            alert("Task removed")
+        }
     }
 }
 

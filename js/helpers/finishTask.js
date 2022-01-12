@@ -1,5 +1,5 @@
 import taskCount from "./taskCount.js";
-import { UpdateTask, GetIDBData } from "./useIDB.js";
+import { UpdateTask, GetIDBData, ReadObjectStore } from "./useIDB.js";
 
 const finishTask = (target) => {
     const $item = target.parentNode.parentNode;
@@ -16,9 +16,12 @@ const finishTask = (target) => {
         cursor.addEventListener("success", () => {
             if(cursor.result){
                 if(cursor.result.key === key){
-                    UpdateTask(key, { cDate: dateFinished });
+                    UpdateTask(key, { state: ["far", "fa-thumbs-up"], cDate: dateFinished });
                     target.disabled = true;
-                    taskCount("completed");
+                    $item.classList.replace("pend-task", "completed-task");
+                    taskCount({dataToModify:"completed", deletTask:false});
+                    taskCount({dataToModify:"progress", deletTask:true});
+                    ReadObjectStore();
                 }  
                 else{
                     cursor.result.continue();

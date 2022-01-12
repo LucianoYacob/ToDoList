@@ -27,13 +27,33 @@ $bg-colors: (
 }
 
 @mixin btn-disabled() {
+    border: none;
+    padding: .5rem .8rem;
+    box-shadow: 0 0 3px #0005;
+    border-radius: 4px;
+    font-weight: 600;
+
     background: grey;
     color: black;
     &:hover{
         background-color: grey;
-        box-shadow: none;
+        box-shadow: 0 0 5px #000a;
     }
     &:focus{
+        outline: none;
+    }
+}
+
+@mixin input-date() {
+    &::-webkit-calendar-picker-indicator {
+        position: absolute;
+        width: 20%;
+        right: 0;
+    }
+    &:focus{
+        outline: none;
+    }
+    &:active{
         outline: none;
     }
 }

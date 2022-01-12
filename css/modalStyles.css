@@ -77,12 +77,27 @@
 }
 
 .modal .task-form div input, .modal .task-form div textarea {
+  position: relative;
   width: 100%;
   max-width: 100%;
   resize: none;
   outline: none;
   border: none;
   border-radius: 3px;
+}
+
+.modal .task-form div input::-webkit-calendar-picker-indicator, .modal .task-form div textarea::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 20%;
+  right: 0;
+}
+
+.modal .task-form div input:focus, .modal .task-form div textarea:focus {
+  outline: none;
+}
+
+.modal .task-form div input:active, .modal .task-form div textarea:active {
+  outline: none;
 }
 
 .modal .task-form div:first-child {
@@ -127,7 +142,7 @@
   padding-right: 10px;
 }
 
-.modal .footer .btn-container button {
+.modal .footer .btn-container .actived {
   border: none;
   padding: .5rem .8rem;
   box-shadow: 0 0 3px #0005;
@@ -138,27 +153,49 @@
   margin-right: calc(1px + 1vw);
 }
 
-.modal .footer .btn-container button:hover {
+.modal .footer .btn-container .actived:hover {
   background-color: #2a294a;
   box-shadow: 0 0 5px #000a;
 }
 
-.modal .footer .btn-container button:focus {
+.modal .footer .btn-container .actived:focus {
   outline: none;
 }
 
 .modal .footer .btn-container button:last-child {
   margin-right: 0;
+  border: none;
+  padding: .5rem .8rem;
+  box-shadow: 0 0 3px #0005;
+  border-radius: 4px;
+  background: #653585;
+  color: #c6b6fa;
+  font-weight: 600;
+}
+
+.modal .footer .btn-container button:last-child:hover {
+  background-color: #2a294a;
+  box-shadow: 0 0 5px #000a;
+}
+
+.modal .footer .btn-container button:last-child:focus {
+  outline: none;
 }
 
 .modal .footer .btn-container .disabled {
+  margin-right: calc(1px + 1vw);
+  border: none;
+  padding: .5rem .8rem;
+  box-shadow: 0 0 3px #0005;
+  border-radius: 4px;
+  font-weight: 600;
   background: grey;
   color: black;
 }
 
 .modal .footer .btn-container .disabled:hover {
   background-color: grey;
-  box-shadow: none;
+  box-shadow: 0 0 5px #000a;
 }
 
 .modal .footer .btn-container .disabled:focus {

@@ -32,6 +32,10 @@ export const ReadObjectStore = () => {
 
         if(res){
             let liElemen = Item(res.key, res.value.state, res.value.title, res.value.sDate, res.value.lDate, res.value.cDate);
+            const $inputComplete = liElemen.querySelector("#sp-finished");
+            if($inputComplete.disabled) liElemen.classList.add("completed-task");
+            else liElemen.classList.add("pend-task");
+            
             documentFragment.appendChild(liElemen);
             cursor.result.continue();
         }
@@ -51,9 +55,6 @@ export const AddNoteDB = objectNote => {
 export const deleteData  = key => {
     const IDBData = GetIDBData("readwrite");
     IDBData[0].delete(key);
-    IDBData[1].addEventListener("complete", () => {
-        alert("Task removed");
-    });
 }
 
 // Poner a todos los metodos data en vez de task

@@ -71,12 +71,14 @@
             overflow-x: hidden;
 
             input,textarea{
+                position: relative;
                 width: 100%;
                 max-width: 100%;
                 resize: none;
                 outline: none;
                 border: none;
                 border-radius: 3px;
+                @include input-date();
             }
         }
         div:first-child{
@@ -118,14 +120,16 @@
             padding-right: 10px;
 
             .actived{
-                @include btn-style;
+                @include btn-actived;
                 margin-right: calc(1px + 1vw);
             }
             button:last-child{
                 margin-right: 0;
+                @include btn-actived;
             }
 
             .disabled{
+                margin-right: calc(1px + 1vw);
                 @include btn-disabled;
             }
         }

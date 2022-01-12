@@ -29,7 +29,7 @@ const addNote = () => {
 
     AddNoteDB(data);
     ReadObjectStore();
-    taskCount("progress");
+    taskCount({dataToModify:"progress", deletTask: false});
     
     handleModal(false);
 }

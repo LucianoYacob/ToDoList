@@ -15,8 +15,8 @@ const ToDoFooter = () => {
     
     $bCTasks.id = "succes-tasks";
     $bPTasks.id = "pend-tasks";
-    $bCTasks.textContent = "0";
-    $bPTasks.textContent = "0";
+    $bCTasks.textContent = JSON.parse(localStorage.getItem("taskCounter"))?.completed || 0;
+    $bPTasks.textContent = JSON.parse(localStorage.getItem("taskCounter"))?.inProgress || 0;
     
     $txtCTask.textContent = `Completed Tasks: `;
     $txtCTask.appendChild($bCTasks);
