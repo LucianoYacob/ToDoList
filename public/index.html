@@ -15,6 +15,29 @@
 <body>
     <div id="root"></div>
 
+    <template id="item-template">
+        <li class="item">
+            <div class="container icon-cont">
+                <div>
+                    <i id="icon-state" class="far fa-clipboard"></i>
+                </div>
+            </div>
+            <div class="container">
+                <span class="title" id="sp-title"></span>
+                <button class="btn-open-task" id="btn-open-task">↑</button>
+            </div>
+            <div class="container">
+                <span class="startD" id="sp-started"></span>
+            </div>
+            <div class="container">
+                <span class="limitD" id="sp-limit"></span>
+            </div>
+            <div class="container">
+                <input class="finishedD" min="2022-01-12" id="sp-finished" type="date">
+            </div>
+        </li>
+    </template>
+
     <script src="../js/index.js" type="module"></script>
 </body>
 </html>

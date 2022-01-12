@@ -13,7 +13,6 @@ d.addEventListener("DOMContentLoaded", App);
 d.addEventListener("click", e => {
     let target = e.target;
 
-
     // Main View
     if(target.matches("#btn-add")){
         appendItem();

@@ -25,11 +25,15 @@ export const fillModal = () => {
                 $inputTitle.value = cursor.result.value.title; 
                 $inputTask.value = cursor.result.value.task; 
                 $startDate.textContent = cursor.result.value.sDate; 
-                let dateLimParts = cursor.result.value.lDate.split("/");
+                
                 let dateStartParts = cursor.result.value.sDate.split("/");
 
                 $deadlineinput.min = new Date(+dateStartParts[2], dateStartParts[1] - 1, +dateStartParts[0]).toISOString().substring(0, 10);
-                $deadlineinput.value = new Date(+dateLimParts[2], dateLimParts[1] - 1, +dateLimParts[0]).toISOString().substring(0, 10);
+                
+                if(cursor.result.value.lDate !== "none"){
+                    let dateLimParts = cursor.result.value.lDate.split("/");
+                    $deadlineinput.value = new Date(+dateLimParts[2], dateLimParts[1] - 1, +dateLimParts[0]).toISOString().substring(0, 10);
+                }
 
                 $btnSave.disabled = true;
                 $btnSave.classList.add("disabled");

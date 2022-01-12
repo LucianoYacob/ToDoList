@@ -1,5 +1,3 @@
-import Item from "./Item.js";
-
 const ToDoListContainer = () => {
     const $listContainer = document.createElement("div"),
         $listUl = document.createElement("ul");

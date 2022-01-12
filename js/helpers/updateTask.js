@@ -9,8 +9,7 @@ const updateTask = () => {
      $deadline = d.getElementById("deadline-input"),
      key = parseInt(d.getElementById("list").querySelector(".active").id);
 
-    let state = ["fas", "fa-spinner"],
-        title = $title.value.trim(),
+    let title = $title.value.trim(),
         task = $task.value.trim(),
         lDate = $deadline.value !== "" ? new Date($deadline.value.replace(/-/g, '\/')).toLocaleDateString() : "none";
 
@@ -20,10 +19,8 @@ const updateTask = () => {
     }
 
     const newData = {
-        state,
         title,
         lDate,
-        cDate: undefined,
         task,
     }
 
